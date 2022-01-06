@@ -12,6 +12,7 @@ class App extends Component {
     };
 
     this.createTask = this.createTask.bind(this);
+    this.updatedTask = this.updatedTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
   }
 
@@ -22,11 +23,26 @@ class App extends Component {
     });
   }
 
+  updatedTask(updatedTask) {
+    const { tasks } = this.state;
+    const updatedTasks = tasks.map((task) => {
+      const taskToUpdate = task;
+      if(taskToUpdate.id === updatedTask.id){
+        taskToUpdate.hasFinished = updatedTask.hasFinished;
+      }
+      return taskToUpdate;
+    });
+
+    this.setState({
+      tasks: updatedTasks,
+    });
+  }
+
   removeTask(id) {
     const { tasks } = this.state;
-    const updatedTask = tasks.filter((task) => task.id != id);
+    const updatedTasks = tasks.filter((task) => task.id != id);
     this.setState({
-      tasks: updatedTask,
+      tasks: updatedTasks,
     });
   }
 
@@ -39,6 +55,7 @@ class App extends Component {
           <Task
             key={task.id}
             data={task}
+            onUpdate={this.updatedTask}
             onRemove={this.removeTask} />
         ))}
       </>
