@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import generators from '../lib/generators';
 
+ import './AddTask.css';
+
 export default class AddTask extends Component {
   constructor() {
     super();
@@ -43,9 +45,9 @@ export default class AddTask extends Component {
     const { title } = this.state;
     
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={title} onChange={this.handleInput} />
-        <button type="submit">Adicionar</button>
+      <form onSubmit={this.handleSubmit} className="addTask">
+        <input type="text" placeholder="Adicionar nova tarefa" value={title} onChange={this.handleInput} />
+        <button type="submit">Salvar</button>
       </form>
     );
   }

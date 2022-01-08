@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Task.css';
 
 export default class Task extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ export default class Task extends Component {
     })
 
     onUpdate({
-        ... currentState,
+        ...currentState,
         hasFinished: event.target.checked,
     });
   }
@@ -34,10 +35,10 @@ export default class Task extends Component {
     const { id, title } = data;
     
     return (
-      <div>
-          <input type="checkbox" onChange={this.handleCheckbox} checked={hasFinished} />
-          {title}
-          <button type="button" onClick={() => onRemove(id)}>Remover</button>
+      <div className="task">
+        <input type="checkbox" onChange={this.handleCheckbox} checked={hasFinished} />
+        <span className="title">{title}</span>
+        <button type="button" onClick={() => onRemove(id)}>Remover</button>
       </div>
     );
   }

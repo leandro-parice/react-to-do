@@ -1,0 +1,27 @@
+.task{
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task input {
+    margin-right: 5px;
+}
+
+.task .title {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.task button {
+    background-color: tomato;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+}

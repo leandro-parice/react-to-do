@@ -1,0 +1,33 @@
+.addTask {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.addTask input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #439f8f;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+
+.addTask button {
+    padding: 10px;
+    border: 1px solid #439f8f;
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    background-color: #31d6b9;
+    color: white;
+    text-transform: uppercase;
+}
+
+.addTask button:hover {
+    background-color: #30ae98;
+}

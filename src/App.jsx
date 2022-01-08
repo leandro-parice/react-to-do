@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import AddTask from './components/AddTask';
 import Task from './components/Task';
 
+import './App.css';
+
 class App extends Component {
   constructor() {
     super();
@@ -61,7 +63,7 @@ class App extends Component {
 
   removeTask(id) {
     const { tasks } = this.state;
-    const updatedTasks = tasks.filter((task) => task.id != id);
+    const updatedTasks = tasks.filter((task) => task.id !== id);
 
     this.setState({
       tasks: updatedTasks,
@@ -73,7 +75,7 @@ class App extends Component {
   render() {
     const { tasks } = this.state;
     return (
-      <>
+      <div className="content">
         <AddTask onCreate={this.createTask} />
         { tasks.map((task) => (
           <Task
@@ -83,7 +85,7 @@ class App extends Component {
             onRemove={this.removeTask}
             hasFinished={task.hasFinished} />
         ))}
-      </>
+      </div>
     );
   }
 }
