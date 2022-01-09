@@ -111,7 +111,7 @@ export default class Task extends Component {
       );
     } else {
       return (
-        <div className="task">
+        <div className={ this.state.hasFinished ? 'task hasFinished' : 'task' }>
           <input type="checkbox" onChange={this.handleCheckbox} checked={hasFinished} />
           
           <span className="title" onClick={this.handleClick}>{title}</span>

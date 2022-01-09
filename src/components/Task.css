@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.task.hasFinished{
+    opacity: 0.4;
+}
+
 .task span.title {
     flex-grow: 1;
     font-size: 14px;
