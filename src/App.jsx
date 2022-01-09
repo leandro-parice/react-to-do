@@ -50,6 +50,7 @@ class App extends Component {
       const taskToUpdate = task;
       if(taskToUpdate.id === updatedTask.id){
         taskToUpdate.hasFinished = updatedTask.hasFinished;
+        taskToUpdate.title = updatedTask.title;
       }
       return taskToUpdate;
     });
